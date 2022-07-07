@@ -15,7 +15,7 @@ src/services        - 모든 비즈니스 로직
 src/subscribers     - 비동기(async) 작업을 위한 이벤트 핸들러
 src/types           - 타입스크립트용 타입 선언 파일
 
-## 3계층 설계 (3 Layer Architecture)
+## 1. 3계층 설계 (3 Layer Architecture)
 관심사 분리(Separation of Concerns)를 적용하기 위해 비즈니스 로직을 API Route와 분리한다.
 
 * Controller
@@ -65,6 +65,12 @@ Pub/Sub 패턴은 3계층 구조를 벗어나지만 매우 유용하다.
   * 3계층에서 벗어났으나 유용
   * 필요하지만 SRP를 위배하는 작업을 실시
   * 함수를 분리하여 SRP를 준수할 수 있도록 해줌
+
+## 2. 의존성 주입
+의존성 주입(D.I) 또는 제어 역전(IoC)은 코드를 구조화하는데 많이 사용되는 패턴이다.   
+생성자를 통해 클래스와 함수의 의존성을 전달해준다.
+
+이 방식을 통해 호환 가능한 의존성(compatible dependency)을 주입하여 코드를 유연하게 유지 할 수 있다. 이는 service에 대한 유닛테스트, 다른 context에서 코드를 사용할 때 등의 경우에 도움을 준다.
 
 이하의 포스팅대로 연습을 진행하였습니다.
 [링크](https://velog.io/@hopsprings2/%EA%B2%AC%EA%B3%A0%ED%95%9C-node.js-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90-%EC%84%A4%EA%B3%84%ED%95%98%EA%B8%B0#%EC%9C%A0%EB%8B%9B-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%98%88%EC%A0%9C-)

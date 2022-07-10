@@ -36,6 +36,7 @@ eventEmitter.on('user_signup', ({user,company})=>{
 
 }); 
 
+//필요하다면 아예 다른 파일로도 나눌 수 있다.
 //salary는 user와 company를 처리하는 서비스 로직의 결과값이 필요하다. 종류가 다르므로 분리한다.
 eventEmitter.on('user_signup', async ({user,company})=>{
     const salaryRecord = await SalaryModel.create(user,company);
